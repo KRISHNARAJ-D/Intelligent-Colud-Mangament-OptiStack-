@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-rl-backend
+  labels:
+    app: cloud-rl-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloud-rl-backend
+  template:
+    metadata:
+      labels:
+        app: cloud-rl-backend
+    spec:
+      serviceAccountName: cloud-rl-scaler-sa
+      containers:
+      - name: backend
+        image: your-docker-registry/cloud-rl-backend:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        env:
+        # Enable Real Cloud Env Logic
+        - name: PRODUCTION
+          value: "true"
+        # Reference Prometheus service running in K8s
+        - name: PROMETHEUS_URL
+          value: "http://prometheus-server.monitoring.svc.cluster.local:80"
+        # The deployment this RL agent will scale
+        - name: K8S_DEPLOYMENT
+          value: "app-backend"
+        # The namespace the target deployment is in
+        - name: K8S_NAMESPACE
+          value: "default"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloud-rl-backend-svc
+spec:
+  selector:
+    app: cloud-rl-backend
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000

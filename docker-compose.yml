@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PRODUCTION=false # Set to true to enable Cloud Scaling Adapter
+      - CLOUD_PROVIDER=k8s # Options: k8s, aws
+      # K8s Config
+      - K8S_NAMESPACE=default
+      - K8S_DEPLOYMENT=app-backend
+      - PROMETHEUS_URL=http://prometheus:9090
+      # AWS Config
+      - AWS_REGION=us-east-1
+      - AWS_ASG_NAME=cloud-rl-asg
+      - AWS_ALB_TG_ID=targetgroup/my-tg/1234
+    volumes:
+      - ./backend:/app # For development editing (optional/can be removed in prod)
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "5173:80" # Mapping to standard vite dev port for convenience, though nginx uses 80
+    depends_on:
+      - backend
