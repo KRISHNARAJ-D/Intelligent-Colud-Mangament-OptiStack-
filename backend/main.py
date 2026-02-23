@@ -126,6 +126,17 @@ async def startup_event():
     # Start the simulation loop in the background
     sim_task = asyncio.create_task(run_simulation_loop())
 
+@app.get("/")
+async def root():
+    """
+    Root endpoint providing a friendly welcome and link to docs.
+    """
+    return {
+        "message": "Welcome to OptiStack API!",
+        "docs_url": "/docs",
+        "status": "Running"
+    }
+
 @app.get("/api/metrics", response_model=GlobalMetrics)
 async def get_metrics():
     """
