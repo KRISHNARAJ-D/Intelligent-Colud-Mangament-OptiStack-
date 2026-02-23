@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import './index.css';
 
-const API_URL = 'http://localhost:8000/api/metrics';
+const API_URL = import.meta.env.VITE_API_URL || 'https://intelligent-colud-mangament-optistack.onrender.com/api/metrics';
 
 // Shared Colors
 const COLORS = ['#0ea5e9', '#14b8a6', '#6366f1', '#8b5cf6'];
