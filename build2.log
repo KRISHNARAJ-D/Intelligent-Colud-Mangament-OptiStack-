@@ -1,0 +1,180 @@
+time="2026-02-23T04:32:48+05:30" level=warning msg="D:\\project phase 2\\INTELLIGENT CLOUD MANAGEMENT\\cloud-rl-optimizer\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.19kB done
+#1 DONE 0.0s
+
+#2 [backend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 502B 0.0s done
+#2 DONE 0.1s
+
+#3 [frontend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 387B 0.0s done
+#3 WARN: FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 2)
+#3 DONE 0.1s
+
+#4 [frontend internal] load metadata for docker.io/library/nginx:alpine
+#4 ...
+
+#5 [backend internal] load metadata for docker.io/library/python:3.10-slim
+#5 DONE 0.5s
+
+#6 [frontend internal] load metadata for docker.io/library/node:20-alpine
+#6 DONE 0.5s
+
+#4 [frontend internal] load metadata for docker.io/library/nginx:alpine
+#4 DONE 0.5s
+
+#7 [backend internal] load .dockerignore
+#7 transferring context: 2B done
+#7 DONE 0.0s
+
+#8 [frontend internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.0s
+
+#9 [frontend internal] load build context
+#9 DONE 0.0s
+
+#10 [frontend stage-1 1/2] FROM docker.io/library/nginx:alpine@sha256:1d13701a5f9f3fb01aaa88cef2344d65b6b5bf6b7d9fa4cf0dca557a8d7702ba
+#10 resolve docker.io/library/nginx:alpine@sha256:1d13701a5f9f3fb01aaa88cef2344d65b6b5bf6b7d9fa4cf0dca557a8d7702ba
+#10 ...
+
+#11 [backend 1/6] FROM docker.io/library/python:3.10-slim@sha256:e508a34e5491225a76fbb9e0f43ebde1f691c6a689d096d7510cf7fb17d4ba6f
+#11 resolve docker.io/library/python:3.10-slim@sha256:e508a34e5491225a76fbb9e0f43ebde1f691c6a689d096d7510cf7fb17d4ba6f 0.1s done
+#11 DONE 0.1s
+
+#10 [frontend stage-1 1/2] FROM docker.io/library/nginx:alpine@sha256:1d13701a5f9f3fb01aaa88cef2344d65b6b5bf6b7d9fa4cf0dca557a8d7702ba
+#10 resolve docker.io/library/nginx:alpine@sha256:1d13701a5f9f3fb01aaa88cef2344d65b6b5bf6b7d9fa4cf0dca557a8d7702ba 0.1s done
+#10 DONE 0.1s
+
+#12 [frontend build 1/6] FROM docker.io/library/node:20-alpine@sha256:09e2b3d9726018aecf269bd35325f46bf75046a643a66d28360ec71132750ec8
+#12 resolve docker.io/library/node:20-alpine@sha256:09e2b3d9726018aecf269bd35325f46bf75046a643a66d28360ec71132750ec8 0.1s done
+#12 DONE 0.1s
+
+#9 [frontend internal] load build context
+#9 transferring context: 998.90kB 0.9s done
+#9 DONE 0.9s
+
+#13 [frontend build 6/6] RUN npm run build
+#13 CACHED
+
+#14 [frontend build 2/6] WORKDIR /app
+#14 CACHED
+
+#15 [frontend build 3/6] COPY package*.json ./
+#15 CACHED
+
+#16 [frontend build 5/6] COPY . .
+#16 CACHED
+
+#17 [frontend build 4/6] RUN npm install
+#17 CACHED
+
+#18 [frontend stage-1 2/2] COPY --from=build /app/dist /usr/share/nginx/html
+#18 CACHED
+
+#19 [frontend] exporting to image
+#19 exporting layers 0.0s done
+#19 exporting manifest sha256:9a4e08730c10b2560c913cc3bd50ef9cc1c94e4418a2a3636eefa9f872d9e025 done
+#19 exporting config sha256:3ccc72cc052af242977d25df640ca4c0dd50da15528687433d0b2104d5ceeb42 done
+#19 exporting attestation manifest sha256:fe9a851d9b4677d9bb02ae2f7e39a824a6527cf8a23030a0966d7d2132153ed9 0.1s done
+#19 exporting manifest list sha256:5d097f6da0a522d538a2ac1d3c5e9d421ecf96cc1975201b8fa0ddf74634f126 0.1s done
+#19 naming to docker.io/library/cloud-rl-optimizer-frontend:latest done
+#19 unpacking to docker.io/library/cloud-rl-optimizer-frontend:latest
+#19 unpacking to docker.io/library/cloud-rl-optimizer-frontend:latest 0.1s done
+#19 DONE 0.4s
+
+#20 [backend internal] load build context
+#20 ...
+
+#21 [frontend] resolving provenance for metadata file
+#21 DONE 0.0s
+
+#20 [backend internal] load build context
+#20 transferring context: 3.68MB 3.1s done
+#20 DONE 3.2s
+
+#22 [backend 3/6] RUN apt-get update && apt-get install -y build-essential libopenmpi-dev && rm -rf /var/lib/apt/lists/*
+#22 CACHED
+
+#23 [backend 2/6] WORKDIR /app
+#23 CACHED
+
+#24 [backend 4/6] COPY requirements.txt .
+#24 CACHED
+
+#25 [backend 5/6] RUN pip install --no-cache-dir -r requirements.txt
+#25 1.790 Collecting absl-py==2.4.0
+#25 1.857   Downloading absl_py-2.4.0-py3-none-any.whl (135 kB)
+#25 1.891      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.8/135.8 kB 4.2 MB/s eta 0:00:00
+#25 1.969 Collecting ale-py==0.11.2
+#25 1.999   Downloading ale_py-0.11.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.1 MB)
+#25 2.936      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.1/5.1 MB 5.4 MB/s eta 0:00:00
+#25 2.963 Collecting annotated-doc==0.0.4
+#25 2.975   Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+#25 3.007 Collecting annotated-types==0.7.0
+#25 3.029   Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+#25 3.072 Collecting anyio==4.12.1
+#25 3.102   Downloading anyio-4.12.1-py3-none-any.whl (113 kB)
+#25 3.114      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 113.6/113.6 kB 11.7 MB/s eta 0:00:00
+#25 3.830 Collecting boto3==1.42.54
+#25 3.859   Downloading boto3-1.42.54-py3-none-any.whl (140 kB)
+#25 3.877      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.6/140.6 kB 8.4 MB/s eta 0:00:00
+#25 4.658 Collecting botocore==1.42.54
+#25 4.676   Downloading botocore-1.42.54-py3-none-any.whl (14.6 MB)
+#25 7.249      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.6/14.6 MB 5.4 MB/s eta 0:00:00
+#25 7.318 Collecting certifi==2026.1.4
+#25 7.332   Downloading certifi-2026.1.4-py3-none-any.whl (152 kB)
+#25 7.366      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 152.9/152.9 kB 4.7 MB/s eta 0:00:00
+#25 7.611 Collecting charset-normalizer==3.4.4
+#25 7.631   Downloading charset_normalizer-3.4.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (153 kB)
+#25 7.673      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 153.6/153.6 kB 4.1 MB/s eta 0:00:00
+#25 7.716 Collecting click==8.3.1
+#25 7.732   Downloading click-8.3.1-py3-none-any.whl (108 kB)
+#25 7.750      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.3/108.3 kB 6.5 MB/s eta 0:00:00
+#25 7.790 Collecting cloudpickle==3.1.2
+#25 7.806   Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+#25 7.845 Collecting colorama==0.4.6
+#25 7.863   Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+#25 8.027 ERROR: Ignored the following versions that require a different python version: 1.3.3 Requires-Python >=3.11
+#25 8.027 ERROR: Could not find a version that satisfies the requirement contourpy==1.3.3 (from versions: 0.0.1, 0.0.2, 0.0.3, 0.0.4, 0.0.5, 1.0.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.0.6, 1.0.7, 1.1.0, 1.1.1rc1, 1.1.1, 1.2.0, 1.2.1rc1, 1.2.1, 1.3.0, 1.3.1, 1.3.2)
+#25 8.029 ERROR: No matching distribution found for contourpy==1.3.3
+#25 8.153 
+#25 8.153 [notice] A new release of pip is available: 23.0.1 -> 26.0.1
+#25 8.153 [notice] To update, run: pip install --upgrade pip
+#25 ERROR: process "/bin/sh -c pip install --no-cache-dir -r requirements.txt" did not complete successfully: exit code: 1
+------
+ > [backend 5/6] RUN pip install --no-cache-dir -r requirements.txt:
+7.790 Collecting cloudpickle==3.1.2
+7.806   Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+7.845 Collecting colorama==0.4.6
+7.863   Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+8.027 ERROR: Ignored the following versions that require a different python version: 1.3.3 Requires-Python >=3.11
+8.027 ERROR: Could not find a version that satisfies the requirement contourpy==1.3.3 (from versions: 0.0.1, 0.0.2, 0.0.3, 0.0.4, 0.0.5, 1.0.0, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.0.6, 1.0.7, 1.1.0, 1.1.1rc1, 1.1.1, 1.2.0, 1.2.1rc1, 1.2.1, 1.3.0, 1.3.1, 1.3.2)
+8.029 ERROR: No matching distribution found for contourpy==1.3.3
+8.153 
+8.153 [notice] A new release of pip is available: 23.0.1 -> 26.0.1
+8.153 [notice] To update, run: pip install --upgrade pip
+------
+Dockerfile:9
+
+--------------------
+
+   7 |     
+
+   8 |     COPY requirements.txt .
+
+   9 | >>> RUN pip install --no-cache-dir -r requirements.txt
+
+  10 |     
+
+  11 |     # Copy source code and the trained model
+
+--------------------
+
+target backend: failed to solve: process "/bin/sh -c pip install --no-cache-dir -r requirements.txt" did not complete successfully: exit code: 1
+
+
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/uedvrcj0mdlpp7gbvaknrae7z
+

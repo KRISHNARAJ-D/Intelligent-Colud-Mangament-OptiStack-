@@ -1,0 +1,26 @@
+# Environment
+.env
+.env.local
+.venv
+venv
+env
+bin
+lib
+lib64
+include
+# Node
+node_modules
+dist
+dist-ssr
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+# Editor
+.vscode/
+.idea/
+.DS_Store
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
